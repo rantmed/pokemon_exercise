@@ -12,8 +12,9 @@ form{
 }
 
 .ajaxContainer div{
+	float: left;
 	background-color: white;
-    width: 200px;
+    width: 280px;
     border-radius: 7px;
     border: 1px solid black;    
     margin: 15px;
