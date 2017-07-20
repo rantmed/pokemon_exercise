@@ -1,6 +1,9 @@
 window.onload = function () {
 
-$.get('http://pokeapi.co/api/v2/pokemon/1/', function( data ) {
+var submit = $('#searchId')
+submit.on('click', function(){
+
+  $.get('http://pokeapi.co/api/v2/pokemon/'+ $('#inputId').val() +'/', function( data ) {
 
   asd = data;
   var i = 0;
@@ -14,19 +17,26 @@ $.get('http://pokeapi.co/api/v2/pokemon/1/', function( data ) {
       text: data.name
   }).appendTo('.tarjeta1');
 
+  var cadena = ""
   data.types.forEach( function (element){
 
-    jQuery('<h3/>', {
-        class: "tipo" + i,
-        text: element.type.name
-    }).appendTo('.tarjeta1');
+    cadena = cadena + element.type.name;
+
+    if(i!==1){
+      cadena = cadena + "/";
+    }
 
     i++;
   });
 
+      jQuery('<h3/>', {
+        class: "tipo",
+        text: cadena
+    }).appendTo('.tarjeta1');
+
 });
 
-$.get('http://pokeapi.co/api/v2/characteristic/1/', function( data ) {
+$.get('http://pokeapi.co/api/v2/characteristic/'+ $('#inputId').val() +'/', function( data ) {
 
   qwe = data;
 
@@ -37,6 +47,10 @@ $.get('http://pokeapi.co/api/v2/characteristic/1/', function( data ) {
   }).appendTo('.tarjeta1');
 
 });
+
+
+});
+
 
 
 };
