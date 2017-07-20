@@ -5,10 +5,12 @@
 		<title>Pokedex</title>
 		<link rel="stylesheet" href="Estilos/bootstrap.css">
 		<link rel="stylesheet" href="Estilos/estilos.css">
+		
 	</head>
 	<body>
 		<div class="container-fluid top-input">
 			<form action="">
+			<div class="row">
 				  <div class="col-lg-6">
 				    <div class="input-group">
 				      <input type="number" class="form-control" id="inputId" placeholder="Search for...">
@@ -17,6 +19,11 @@
 				      </span>
 				    </div>
 				  </div>
+				  <div class="col">
+				  		<select id="type-selector" class="form-control"></select>
+				  		<button class="btn btn-primary" id="searchType" type="button">Buscar por tipo</button>
+				  </div>
+			</div>
 			</form>
 		</div>
 		<div class="ajaxContainer">
